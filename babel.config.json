@@ -1,0 +1,39 @@
+{
+     "presets": [
+          "@babel/preset-env",
+          ["@babel/preset-react", {
+               "runtime": "automatic"
+          }],
+          "@babel/preset-typescript"
+     ],
+     "plugins": [
+          ["@babel/plugin-proposal-class-properties"],
+          [
+               "babel-plugin-direct-import", {
+                    "modules": [
+                         "@mui/styled-engine-sc",
+                         "@mui/material",
+                         "@mui/icons-material"
+                    ]
+               }
+          ],
+          [
+               "babel-plugin-module-resolver", {
+                    "extensions": [".js", ".jsx", ".ts", ".tsx"],
+                    "root": ["./src"],
+                    "alias": {
+                         // this must be synchronized with tsconfig.json's path configuration
+                         "styles": "./src/styles",
+                         "assets": "./src/assets",
+                         "constants": "./src/constants",
+                         "models": "./src/models",
+                         "utils": "./src/utils",
+                         "shared": "./src/components/shared",
+                         "hooks": "./src/hooks",
+                         "context": "./src/context"
+                    }
+               }
+          ],
+          ["babel-plugin-styled-components"]
+     ]
+}

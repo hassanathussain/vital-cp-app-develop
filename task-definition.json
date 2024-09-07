@@ -1,0 +1,166 @@
+{
+  "ipcMode": null,
+  "executionRoleArn": "arn:aws:iam::271328024704:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "dnsSearchDomains": null,
+      "environmentFiles": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "/ecs/ubuntu",
+          "awslogs-region": "us-west-2",
+          "awslogs-create-group": "true",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "entryPoint": null,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "command": null,
+      "linuxParameters": null,
+      "cpu": 2048,
+      "environment": [
+        {
+          "name": "API_URL",
+          "value": "https://svrs-dev-vital-api.azurewebsites.net"
+        },
+        {
+          "name": "AUTH0_AUDIENCE",
+          "value": "https://svrs-dev-vital-api.azurewebsites.net"
+        },
+        {
+          "name": "AUTH0_CALLBACK_URL",
+          "value": "https://dev.vital-cp-app.sorensoncloud.com/"
+        },
+        {
+          "name": "AUTH0_CLIENT_ID",
+          "value": "ej5LR8jrUGKWjiFMPVVJPODCCkYPLL60"
+        },
+        {
+          "name": "AUTH0_DOMAIN",
+          "value": "sorenson-vital-test.us.auth0.com"
+        },
+        {
+          "name": "AUTH0_SCOPE",
+          "value": "read:jobs"
+        },
+        {
+          "name": "SKIP_PREFLIGHT_CHECK",
+          "value": "true"
+        },
+        {
+          "name": "REACT_APP_LAUNCH_DARKLY_CLIENT_ID",
+          "value": "657a07a73766640fcff79bfc"
+        }
+      ],
+      "resourceRequirements": null,
+      "ulimits": null,
+      "dnsServers": null,
+      "mountPoints": [],
+      "workingDirectory": null,
+      "secrets": null,
+      "dockerSecurityOptions": null,
+      "memory": 6144,
+      "memoryReservation": null,
+      "volumesFrom": [],
+      "stopTimeout": null,
+      "image": "271328024704.dkr.ecr.us-west-2.amazonaws.com/vital-cp-app-qa",
+      "startTimeout": null,
+      "firelensConfiguration": null,
+      "dependsOn": null,
+      "disableNetworking": null,
+      "interactive": null,
+      "healthCheck": null,
+      "essential": true,
+      "links": null,
+      "hostname": null,
+      "extraHosts": null,
+      "pseudoTerminal": null,
+      "user": null,
+      "readonlyRootFilesystem": null,
+      "dockerLabels": null,
+      "systemControls": null,
+      "privileged": null,
+      "name": "dev-vital-cp-app"
+    }
+  ],
+  "placementConstraints": [],
+  "memory": "6144",
+  "taskRoleArn": "arn:aws:iam::271328024704:role/ecsTaskExecutionRole",
+  "compatibilities": ["EC2", "FARGATE"],
+  "taskDefinitionArn": "arn:aws:ecs:us-west-2:271328024704:task-definition/linux:220",
+  "family": "linux",
+  "requiresAttributes": [
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-ecr-pull"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.task-eni"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+    }
+  ],
+  "pidMode": null,
+  "requiresCompatibilities": ["FARGATE"],
+  "networkMode": "awsvpc",
+  "runtimePlatform": null,
+  "cpu": "2048",
+  "revision": 220,
+  "status": "ACTIVE",
+  "inferenceAccelerators": null,
+  "proxyConfiguration": null,
+  "volumes": []
+}

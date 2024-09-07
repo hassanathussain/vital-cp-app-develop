@@ -1,0 +1,25 @@
+# dependencies
+node_modules
+
+# misc
+.DS_Store
+.env
+.env.production
+.env.development
+.env.uat
+.env.qa
+
+# production
+build
+dist
+
+# temp files
+temp.json
+temp.txt
+temp.tsx
+
+# testing
+coverage
+
+# Visual Studio Code
+.vscode

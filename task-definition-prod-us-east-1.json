@@ -1,0 +1,109 @@
+{
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:941612032805:task-definition/linux:57",
+  "containerDefinitions": [
+    {
+      "name": "prod-vital-cp-app",
+      "image": "941612032805.dkr.ecr.us-west-2.amazonaws.com/vitalcustomerportal",
+      "cpu": 4096,
+      "memory": 12288,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "environment": [
+        {
+          "name": "AUTH0_CLIENT_ID",
+          "value": "GP2sBlaSy0LQKaFsCqVBpLF4eaWVF1dc"
+        },
+        {
+          "name": "API_URL",
+          "value": "https://svrs-uw2-prod-vital-api.azurewebsites.net"
+        },
+        {
+          "name": "AUTH0_CALLBACK_URL",
+          "value": "https://portal.sorenson.com/"
+        },
+        {
+          "name": "AUTH0_SCOPE",
+          "value": "read:jobs"
+        },
+        {
+          "name": "AUTH0_DOMAIN",
+          "value": "sorenson-customerportal.us.auth0.com"
+        },
+        {
+          "name": "SKIP_PREFLIGHT_CHECK",
+          "value": "true"
+        },
+        {
+          "name": "AUTH0_AUDIENCE",
+          "value": "https://svrs-prod-vitalnext.azurefd.net"
+        },
+        {
+          "name": "REACT_APP_LAUNCH_DARKLY_CLIENT_ID",
+          "value": "657a080afcd02810b652b34a"
+        }
+      ],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/ubuntu",
+          "awslogs-create-group": "true",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "systemControls": []
+    }
+  ],
+  "family": "linux",
+  "taskRoleArn": "arn:aws:iam::941612032805:role/ecsTaskexecutionRole",
+  "executionRoleArn": "arn:aws:iam::941612032805:role/ecsTaskexecutionRole",
+  "networkMode": "awsvpc",
+  "revision": 57,
+  "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+    {
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "name": "ecs.capability.execution-role-ecr-pull"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "name": "ecs.capability.task-eni"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+    }
+  ],
+  "placementConstraints": [],
+  "compatibilities": ["EC2", "FARGATE"],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "4096",
+  "memory": "12288",
+  "registeredAt": "2024-08-09T19:18:51.357Z",
+  "registeredBy": "arn:aws:sts::941612032805:assumed-role/terraform-cloud-assume-role/aws-go-sdk-1723231129943900984",
+  "tags": []
+}
