@@ -21,4 +21,4 @@ Production files can be built using the following script:
 
 ### `npm run build`
 
-- You should now see `build` and `dist` folders located at the root directory created by the module builder.
+- You should now see `build` and `dist` folders located at the root directory created by the module builder
